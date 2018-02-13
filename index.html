@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,296 @@
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
-  
+
+  <!-- think of a theme, or at least a name that might be useful in organizing your thoughts & perceptions to get creative -->
+  <h1>!¡!Trivial¡!¡ Oblivion!¡!</h1>
+  <h2>Change this shit</h2>
+  <p>some instructions</p>
+
+  <button id="start-btn">Start!</button>
+
+  <div id="q-container">
+    <form action="#">
+
+      <!-- the input>name= value should be the same for all four answers for each question. This makes it so only one may be selected. Make it something related to the question. -->
+      <!-- Match the label>for= attribute to match the input>id= -->
+      <p class="question" id="q1">Who was the captain of Serenity in Firefly?</p>
+      <ul>
+        <li>
+          <input type="radio" name="thing" value="false" class="radio-btn" id="q1-first-btn" />
+          <label for="q1-first-btn">Glen Sutherland</label>
+        </li>
+        <li>
+          <input type="radio" name="thing" value="true" class="radio-btn" id="q1-second-btn" />
+          <label for="q1-second-btn">Malcolm Reynolds</label>
+        </li>
+        <li>
+          <input type="radio" name="thing" value="false" class="radio-btn" id="q1-third-btn" />
+          <label for="q1-third-btn">Strongbad</label>
+        </li>
+        <li>
+          <input type="radio" name="thing" value="false" class="radio-btn" id="q1-fourth-btn" />
+          <label for="q1-fourth-btn">Brother Stimpy</label>
+        </li>
+      </ul>
+
+      <p class="question" id="q2">To throw someone through a window is to _______ them.</p>
+      <ul>
+        <li>
+          <input type="radio" name="stuff" value="false" class="radio-btn" id="q2-first-btn" />
+          <label for="q2-first-btn">get rid of</label>
+        </li>
+        <li>
+          <input type="radio" name="stuff" value="false" class="radio-btn" id="q2-second-btn" />
+          <label for="q2-second-btn">disrespect</label>
+        </li>
+        <li>
+          <input type="radio" name="stuff" value="false" class="radio-btn" id="q2-third-btn" />
+          <label for="q2-third-btn">hurt</label>
+        </li>
+        <li>
+          <input type="radio" name="stuff" value="true" class="radio-btn" id="q2-fourth-btn" />
+          <label for="q2-fourth-btn">defenestrate</label>
+        </li>
+      </ul>
+
+      <p class="question" id="q3">How much longer will it be before Tool releases another album?</p>
+      <ul>
+        <li>
+          <input type="radio" name="weird" value="false" class="radio-btn" id="q3-first-btn" />
+          <label for="q3-first-btn">6 months.</label>
+        </li>
+        <li>
+          <input type="radio" name="weird" value="false" class="radio-btn" id="q3-second-btn" />
+          <label for="q3-second-btn">A year.</label>
+        </li>
+        <li>
+          <input type="radio" name="weird" value="false" class="radio-btn" id="q3-third-btn" />
+          <label for="q3-third-btn">They're working on it now.</label>
+        </li>
+        <li>
+          <input type="radio" name="weird" value="true" class="radio-btn" id="q3-fourth-btn" />
+          <label for="q3-fourth-btn">Just kidding; they retired and didn't bother to tell you.</label>
+        </li>
+      </ul>
+
+      <p class="question" id="q4">Is Die Hard a legitimate Christmas movie?</p>
+      <ul>
+        <li>
+          <input type="radio" name="words" value="true" class="radio-btn" id="q4-first-btn" />
+          <label for="q4-first-btn">Yes</label>
+        </li>
+        <li>
+          <input type="radio" name="words" value="false" class="radio-btn" id="q4-second-btn" />
+          <label for="q4-second-btn">Wrong</label>
+        </li>
+        <li>
+          <input type="radio" name="words" value="false" class="radio-btn" id="q4-third-btn" />
+          <label for="q4-third-btn">Wrong</label>
+        </li>
+        <li>
+          <input type="radio" name="words" value="false" class="radio-btn" id="q4-fourth-btn" />
+          <label for="q4-fourth-btn">Wrong</label>
+        </li>
+      </ul>
+
+      <p class="question" id="q5">How many licks to the center of a tootsie-roll tootsie pop?</p>
+      <ul>
+        <li>
+          <input type="radio" name="narf" value="false" class="radio-btn" id="q5-first-btn" />
+          <label for="q5-first-btn">One</label>
+        </li>
+        <li>
+          <input type="radio" name="narf" value="false" class="radio-btn" id="q5-second-btn" />
+          <label for="q5-second-btn">Two</label>
+        </li>
+        <li>
+          <input type="radio" name="narf" value="false" class="radio-btn" id="q5-third-btn" />
+          <label for="q5-third-btn">Three</label>
+        </li>
+        <li>
+          <input type="radio" name="narf" value="true" class="radio-btn" id="q5-fourth-btn" />
+          <label for="q5-fourth-btn">The world may never know.</label>
+        </li>
+      </ul>
+
+      <p class="question" id="q6">Waffles or Pancakes?</p>
+      <ul>
+        <li>
+          <input type="radio" name="fnord" value="true" class="radio-btn" id="q6-first-btn" />
+          <label for="q6-first-btn">Pancakes</label>
+        </li>
+        <li>
+          <input type="radio" name="fnord" value="false" class="radio-btn" id="q6-second-btn" />
+          <label for="q6-second-btn">No</label>
+        </li>
+        <li>
+          <input type="radio" name="fnord" value="false" class="radio-btn" id="q6-third-btn" />
+          <label for="q6-third-btn">Wrong</label>
+        </li>
+        <li>
+          <input type="radio" name="fnord" value="false" class="radio-btn" id="q6-fourth-btn" />
+          <label for="q6-fourth-btn">Pff</label>
+        </li>
+      </ul>
+
+      <p class="question" id="q7">You keep using that word. I do not think it means what you think it means:</p>
+      <ul>
+        <li>
+          <input type="radio" name="feck" value="false" class="radio-btn" id="q7-first-btn" />
+          <label for="q7-first-btn">Iocaine powder</label>
+        </li>
+        <li>
+          <input type="radio" name="feck" value="false" class="radio-btn" id="q7-second-btn" />
+          <label for="q7-second-btn">Prepare to die</label>
+        </li>
+        <li>
+          <input type="radio" name="feck" value="true" class="radio-btn" id="q7-third-btn" />
+          <label for="q7-third-btn">Inconthievable</label>
+        </li>
+        <li>
+          <input type="radio" name="feck" value="false" class="radio-btn" id="q7-fourth-btn" />
+          <label for="q7-fourth-btn">R.O.U.S's</label>
+        </li>
+      </ul>
+
+      <p class="question" id="q8">If I had a world of my own, everything would be:</p>
+      <ul>
+        <li>
+          <input type="radio" name="heck" value="false" class="radio-btn" id="q8-first-btn" />
+          <label for="q8-first-btn">Orange.</label>
+        </li>
+        <li>
+          <input type="radio" name="heck" value="true" class="radio-btn" id="q8-second-btn" />
+          <label for="q8-second-btn">Nonsense.</label>
+        </li>
+        <li>
+          <input type="radio" name="heck" value="false" class="radio-btn" id="q8-third-btn" />
+          <label for="q8-third-btn">Tasty.</label>
+        </li>
+        <li>
+          <input type="radio" name="heck" value="false" class="radio-btn" id="q8-fourth-btn" />
+          <label for="q8-fourth-btn">Moist.</label>
+        </li>
+      </ul>
+
+      <p class="question" id="q9">Climate Change is:</p>
+      <ul>
+        <li>
+          <input type="radio" name="shoot" value="false" class="radio-btn" id="q9-first-btn" />
+          <label for="q9-first-btn">A Chinese hoax.</label>
+        </li>
+        <li>
+          <input type="radio" name="shoot" value="false" class="radio-btn" id="q9-second-btn" />
+          <label for="q9-second-btn">A buncha hooey.</label>
+        </li>
+        <li>
+          <input type="radio" name="shoot" value="false" class="radio-btn" id="q9-third-btn" />
+          <label for="q9-third-btn">Liberal bullshizzle.</label>
+        </li>
+        <li>
+          <input type="radio" name="shoot" value="true" class="radio-btn" id="q9-fourth-btn" />
+          <label for="q9-fourth-btn">A well-supported scientific theory.</label>
+        </li>
+      </ul>
+
+      <p class="question" id="q10">In the phrases 'the theory of gravity' and 'the theory of evolution', the word 'theory' means something like:</p>
+      <ul>
+        <li>
+          <input type="radio" name="frig" value="false" class="radio-btn" id="q10-first-btn" />
+          <label for="q10-first-btn">A pretty good guess.</label>
+        </li>
+        <li>
+          <input type="radio" name="frig" value="false" class="radio-btn" id="q10-second-btn" />
+          <label for="q10-second-btn">The musings of some crazy scientist.</label>
+        </li>
+        <li>
+          <input type="radio" name="frig" value="true" class="radio-btn" id="q10-third-btn" />
+          <label for="q10-third-btn">A well-substantiated and reliable explanation of some aspect of the natural world, repeatedly confirmed through
+            observation and experiment.</label>
+        </li>
+        <li>
+          <input type="radio" name="frig" value="false" class="radio-btn" id="q10-fourth-btn" />
+          <label for="q10-fourth-btn">Lies!</label>
+        </li>
+      </ul>
+
+      <p class="question" id="q11">Is that soap box sturdy enough to support so many opinions?</p>
+      <ul>
+        <li>
+          <input type="radio" name="darn" value="false" class="radio-btn" id="q11-first-btn" />
+          <label for="q11-first-btn">Probably not.</label>
+        </li>
+        <li>
+          <input type="radio" name="darn" value="false" class="radio-btn" id="q11-second-btn" />
+          <label for="q11-second-btn">Let's find out.</label>
+        </li>
+        <li>
+          <input type="radio" name="darn" value="false" class="radio-btn" id="q11-third-btn" />
+          <label for="q11-third-btn">Squirrel!</label>
+        </li>
+        <li>
+          <input type="radio" name="darn" value="true" class="radio-btn" id="q11-fourth-btn" />
+          <label for="q11-fourth-btn">Where else would you put them??</label>
+        </li>
+      </ul>
+
+      <p class="question" id="q12">If the log rolls over, we'll all be:</p>
+      <ul>
+        <li>
+          <input type="radio" name="whyfor" value="true" class="radio-btn" id="q12-first-btn" />
+          <label for="q12-first-btn">Dead.</label>
+        </li>
+        <li>
+          <input type="radio" name="whyfor" value="false" class="radio-btn" id="q12-second-btn" />
+          <label for="q12-second-btn">A monkey's uncle.</label>
+        </li>
+        <li>
+          <input type="radio" name="whyfor" value="false" class="radio-btn" id="q12-third-btn" />
+          <label for="q12-third-btn">Left behind.</label>
+        </li>
+        <li>
+          <input type="radio" name="whyfor" value="false" class="radio-btn" id="q12-fourth-btn" />
+          <label for="q12-fourth-btn">Over the rainbow.</label>
+        </li>
+      </ul>
+
+      <p class="question" id="q13">Where'd you go, psycho boy?</p>
+      <ul>
+        <li>
+          <input type="radio" name="suphomie" value="false" class="radio-btn" id="q13-first-btn" />
+          <label for="q13-first-btn">I am Jack's smirking revenge.</label>
+        </li>
+        <li>
+          <input type="radio" name="suphomie" value="false" class="radio-btn" id="q13-second-btn" />
+          <label for="q13-second-btn">The first rule of Project Mayhem is you do not ask questions.</label>
+        </li>
+        <li>
+          <input type="radio" name="suphomie" value="true" class="radio-btn" id="q13-third-btn" />
+          <label for="q13-third-btn">I felt like destroying something beautiful.</label>
+        </li>
+        <li>
+          <input type="radio" name="suphomie" value="false" class="radio-btn" id="q13-fourth-btn" />
+          <label for="q13-fourth-btn">Slide.</label>
+        </li>
+      </ul>
+
+    </form>
+    <button id="done-btn">Done!</button>
+
+  </div>
+
+  <div id="stat-container">
+    <h3>All Done!</h3>
+    <h4 id="correct-answers"></h4>
+    <h4 id="incorrect-answers"></h4>
+    <h4 id="unanswered"></h4>
+  </div>
+
   <script src="assets/js/jquery-3.3.1.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
+
 </html>
