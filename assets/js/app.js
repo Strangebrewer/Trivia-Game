@@ -43,9 +43,9 @@ var quiz = {
 
   , fadeIn: function (p1) {
     setTimeout(function () {
-      $(p1).css("display", "block");
       $(p1).css("animation", "fadein 1s");
       $(p1).css("opacity", "1");
+      $(p1).css("display", "block");
     }, 1000);
   }
 
@@ -65,17 +65,18 @@ var quiz = {
   }
 
   , startQuiz: function () {
-    $("#time-remaining").html("Time Remaining: " + timeRemaining + " seconds");
+    $("#time-count").html(timeRemaining);
     quizInterval = setInterval(quiz.count, 1000);
     quiz.fadeOut("#start-btn");
     quiz.fadeIn("#quiz-container");
+    quiz.fadeIn("#time-remaining");
     document.getElementById("done-btn").addEventListener("click", quiz.stopQuiz);
     quizTimeout = setTimeout(function () {
       quiz.tallyAnswers();
       $("#quiz-over").html("Time's Up!");
       quiz.pushStats();
       clearInterval(quizInterval);
-    }, 1000 * 20);
+    }, 1000 * 120);
   }
 
   , stopQuiz: function () {
@@ -94,6 +95,7 @@ var quiz = {
 
   , pushStats: function () {
     quiz.fadeOut("#quiz-container");
+    quiz.fadeOut("#time-remaining");
     $("#correct-answers").html("Correct Answers: " + correctAnswers);
     $("#incorrect-answers").html("Incorrect Answers: " + incorrectAnswers);
     $("#unanswered").html("Unanswered: " + unansweredQuestions);
@@ -103,6 +105,6 @@ var quiz = {
   , count: function () {
     timeRemaining--;
     console.log(timeRemaining);
-    $("#time-remaining").html("Time Remaining: " + timeRemaining + " seconds");
+    $("#time-count").html(timeRemaining);
   }
 }

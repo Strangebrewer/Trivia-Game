@@ -4,10 +4,8 @@
 
 html {
   background-color: #000;
-  background-image: url("../images/ship-sunset3.jpg");
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: contain;
+  font-family: 'Cabin Sketch', Arial, Helvetica, sans-serif;
+  font-size: 22px;
 }
 
 body {
@@ -16,35 +14,227 @@ body {
   min-height: 100vh;
 }
 
-header {
-  flex-shrink: 0;
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
-.big-container {
-  flex: 1 0 auto;
-  width: 960px;
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Niconne', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.header {
+  background-color: #000;
+  flex-shrink: 0;
+  margin: auto;
+  padding: 30px 0 60px 0;
+}
+
+.sub-header {
+  background-color: #141414;
+  border-top: 2px solid #ff6e0d;
+  border-bottom: 2px solid #ff6e0d;
+  box-shadow: 0 0 20px #ff8331;
+  height: 120px;
+}
+
+h2 {
+  color: #ff9a26;
+  font-size: 2em;
+  font-style: italic;
+  text-align: center;
+  text-shadow: 0 0 30px #ff6e0d;
+}
+
+.game-title {
+  width: 750px;
   margin: auto;
 }
 
-#quiz-container {
+.game-title img {
+  float: left;
+  margin-top: -40px;
+  width: 400px;
+}
+
+h1 {
+  color: #888;
+  float: left;
+  font-size: 2.8em;
+  font-style: italic;
+  margin-top: 12px;
+  padding-left: 40px;
+  text-shadow: 0 0 30px #ff6e0d;
+}
+
+.big-container {
+  clear: both;
+  flex: 1 0 auto;
+  margin: auto;
+  position: relative;
+}
+
+#start-btn {
+  background: transparent;
+  border: none;
+  font-family: 'Niconne', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #ff812d;
+  margin: 300px auto 0 auto;
+  text-shadow: 0 9px 5px #333;
+}
+
+#start-btn:hover {
+  color: #fff;
+  text-shadow: 0 9px 5px #6e2c00;
+}
+
+#start-btn:active {
+  color: #ff812d;
+  text-shadow: 0 4px 5px #6e2c00;
+  transform: translateY(4px);
+}
+
+#start-btn:focus {
+  outline: none;
+}
+
+.hidden-start {
   display: none;
+}
+
+#quiz-container {
+  color: #cecece;
+  margin: 350px auto 0 auto;
   opacity: 0;
+  width: 800px;
+  z-index: 0;
+}
+
+#quiz-container p {
+  color: #ff812d;
+  font-size: 1.3em;
+  margin: 50px 0 5px 0;
+  text-shadow: 0 0 5px #999;
+}
+
+#quiz-container ul {
+  padding-left: 75px;
+}
+
+#time-remaining {
+  color: #c5c5c5;
+  font-family: 'Niconne', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1.4em;
+  opacity: 0;
+  z-index: 1;
+  padding-top: 40px;
+  /* text-shadow: 5px 5px 10px #ff6e0d; */
+}
+
+#time-count {
+  color: #850000;
+  display: inline-block;
+  font-family: 'Niconne', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1.4em;
+  line-height: .8;
+  /* opacity: 0; */
+  z-index: 1;
+  height: 28px;
+  text-align: center;
+  /* text-shadow: 0 0 7px #000; */
+  width: 48px;
+}
+
+.question {
+  z-index: 0;
+}
+
+.radio-btn {
+  z-index: 0;
 }
 
 #stat-container {
   display: none;
+  margin-top: 400px;
   opacity: 0;
 }
 
+h3, h4 {
+  color: #c5c5c5;
+  font-style: italic;
+  margin-top: 15px;
+  padding-left: 10px;
+  text-shadow: 0 0 30px #ff6e0d;
+}
+
+h3 {
+  font-size: 2.4em;
+}
+
+h4 {
+  font-size: 1.8em;
+  padding-left: 50px;
+}
+
+.btn-ctr-div {
+  margin: 50px auto;
+  width: 150px;
+}
+
+#done-btn {
+  background: transparent;
+  border: none;
+  font-family: 'Niconne', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #ff812d;
+  text-shadow: 0 9px 5px #333;
+}
+
+#done-btn:hover {
+  color: #fff;
+  text-shadow: 0 9px 5px #6e2c00;
+}
+
+#done-btn:active {
+  color: #ff812d;
+  text-shadow: 0 5px 5px #6e2c00;
+  transform: translateY(4px);
+}
+
+#done-btn:focus {
+  outline: none;
+}
+
 footer {
+  background-color: #141414;
+  border-top: 2px solid #ff6e0d;
+  box-shadow: 0 0 20px #ff8331;
+  color: #888;
   flex-shrink: 0;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: .8em;
+  padding: 20px;
+  text-align: center;
+  text-shadow: 0 0 30px #ff6e0d;
 }
 
 @keyframes fadeout {
   0% { opacity: 1; }
   100% { opacity: 0; }
 }
-
 @keyframes fadein {
   0% { opacity: 0; }
   100% { opacity: 1; }
