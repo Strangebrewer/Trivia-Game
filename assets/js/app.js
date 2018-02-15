@@ -17,75 +17,92 @@
 // Incorrect Answers: 5
 // Unanswered: 8
 
+window.onload = function () {
+  document.getElementById("start-btn").addEventListener("click", quiz.startQuiz);
+};
+
+
 var correctAnswers = 0;
 var incorrectAnswers = 0;
 var totalQuestions = 13;
+var timeRemaining = 121;
 var unansweredQuestions;
-var clickDoneFlag = false;
-var timerFlag = false;
+var quizTimeout
+var quizInterval;
 
-function fadeOut(p1) {
-  $(p1).css("animation", "fadeout 1.2s");
-  $(p1).css("opacity", "0");
-  setTimeout(function () {
-    $(p1).css("display", "none");
-  }, 1200)
-}
+// quiz object
+var quiz = {
 
-function fadeIn(p1) {
-  $(p1).css("animation", "fadein 1.4s");
-  $(p1).css("opacity", "1");
-  $(p1).css("display", "unset");
-}
-
-function tallyAnswers() {
-  var radios = document.getElementsByClassName("radio-btn");
-  for (i = 0; i < radios.length; i++) {
-    if (radios[i].checked) {
-      if (radios[i].value === "true") {
-        correctAnswers++;
-      }
-      if (radios[i].value === "false") {
-        incorrectAnswers++;
-      }
-    }
+  fadeOut: function (p1) {
+    $(p1).css("animation", "fadeout 1s");
+    $(p1).css("opacity", "0");
+    setTimeout(function () {
+      $(p1).css("display", "none");
+    }, 1000);
   }
-  unansweredQuestions = totalQuestions - (correctAnswers + incorrectAnswers);
-}
 
-function reset() {
-  correctAnswers = 0;
-  incorrectAnswers = 0;
-  unansweredQuestions = 0;
-  clickDoneFlag = false;
-}
+  , fadeIn: function (p1) {
+    setTimeout(function () {
+      $(p1).css("display", "block");
+      $(p1).css("animation", "fadein 1s");
+      $(p1).css("opacity", "1");
+    }, 1000);
+  }
 
-function pushStats() {
-  fadeOut("#q-container");
-  $("#correct-answers").html(correctAnswers);
-  $("#incorrect-answers").html(incorrectAnswers);
-  $("#unanswered").html(unansweredQuestions);
-  fadeIn("#stat-container");
-}
-
-document.getElementById("start-btn").addEventListener("click", function () {
-  fadeOut("#start-btn");
-
-  fadeIn("#q-container");
-
-  document.getElementById("done-btn").addEventListener("click", function () {
-    if (timerFlag === false) {
-      clickDoneFlag = true;
-      tallyAnswers();
-      pushStats();
+  , tallyAnswers: function () {
+    var radios = document.getElementsByClassName("radio-btn");
+    for (i = 0; i < radios.length; i++) {
+      if (radios[i].checked) {
+        if (radios[i].value === "true") {
+          correctAnswers++;
+        }
+        if (radios[i].value === "false") {
+          incorrectAnswers++;
+        }
+      }
     }
-  });
+    unansweredQuestions = totalQuestions - (correctAnswers + incorrectAnswers);
+  }
 
-  setTimeout(function () {
-    if (clickDoneFlag ===   false) {
-      tallyAnswers();
-      timerFlag = true;
-    }
-  }, 1000 * 5);
+  , startQuiz: function () {
+    $("#time-remaining").html("Time Remaining: " + timeRemaining + " seconds");
+    quizInterval = setInterval(quiz.count, 1000);
+    quiz.fadeOut("#start-btn");
+    quiz.fadeIn("#quiz-container");
+    document.getElementById("done-btn").addEventListener("click", quiz.stopQuiz);
+    quizTimeout = setTimeout(function () {
+      quiz.tallyAnswers();
+      $("#quiz-over").html("Time's Up!");
+      quiz.pushStats();
+      clearInterval(quizInterval);
+    }, 1000 * 20);
+  }
 
-});
+  , stopQuiz: function () {
+    quiz.tallyAnswers();
+    clearInterval(quizInterval);
+    clearTimeout(quizTimeout);
+    $("#quiz-over").css("display", "none");
+    quiz.pushStats();
+  }
+
+  , reset: function () {
+    correctAnswers = 0;
+    incorrectAnswers = 0;
+    unansweredQuestions = 0;
+  }
+
+  , pushStats: function () {
+    quiz.fadeOut("#quiz-container");
+    $("#correct-answers").html("Correct Answers: " + correctAnswers);
+    $("#incorrect-answers").html("Incorrect Answers: " + incorrectAnswers);
+    $("#unanswered").html("Unanswered: " + unansweredQuestions);
+    quiz.fadeIn("#stat-container");
+  }
+
+  , count: function () {
+    timeRemaining--;
+    console.log(timeRemaining);
+    $("#time-remaining").html("Time Remaining: " + timeRemaining + " seconds");
+  }
+}
