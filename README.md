@@ -1,4 +1,4 @@
-# Trivia-Game
+# Trivia Game
 
 Bootcamp assignment using intervals and timeouts.
 
